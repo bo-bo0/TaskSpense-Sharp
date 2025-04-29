@@ -56,7 +56,7 @@ namespace PersonalExpenseAndTaskManager
                     var newExpense = new Expense((comboBoxInOut.Text == "Income") ? $"+{textBoxAmount.Text}" : $"-{textBoxAmount.Text}", Convert.ToString(dateTimePicker.Value), comboBoxCategory.Text, richTextBoxDescription.Text, textBoxIntermediate.Text);
                     ExpensesForm.expenses.Insert(0,newExpense);
                     
-                    if(ExpensesForm.expensesFile != null) FileActions.addJsonContent(newExpense, ExpensesForm.expensesFile);
+                    if(ExpensesForm.expensesFile != null) FileActions.addJsonContent(newExpense, ExpensesForm.expensesFile, ExpensesForm.expenses);
 
                     var currMainForm = Application.OpenForms.OfType<ExpensesForm>().FirstOrDefault();
 
@@ -80,4 +80,5 @@ namespace PersonalExpenseAndTaskManager
         }
 
     }
+
 }

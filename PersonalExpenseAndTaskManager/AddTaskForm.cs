@@ -40,6 +40,35 @@ namespace PersonalExpenseAndTaskManager
             else
                 buttonDone2.Enabled = true;
         }
+
+        private void textBoxTitle_TextChanged(object sender, EventArgs e)
+        {
+            TextActions.inputBlock(textBoxTitle, 16);
+        }
+
+        private void buttonDone2_Click(object sender, EventArgs e)
+        {
+            var answer = MessageBox.Show("Do you want to upload this data?", "Confirm Request", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (answer == DialogResult.Yes)
+            {
+                var newTask = new Task(textBoxTitle.Text, richTextBoxDescription2.Text, (checkBoxActivedeadline.Checked) ? Convert.ToString(dateTimePickerDeadline.Value) : null, (checkBoxActivePriority.Checked) ? trackBarPriority.Value : null);
+
+                ExpensesForm.tasks.Insert(0, newTask);
+
+                var currMainForm = Application.OpenForms.OfType<ExpensesForm>().FirstOrDefault();
+
+                if (currMainForm != null)
+                {
+                    currMainForm.dataGridViewTasks.DataSource = null;
+                    currMainForm.dataGridViewTasks.DataSource = ExpensesForm.tasks;
+                }
+
+                if (ExpensesForm.tasksFile != null) { FileActions.addJsonContent(newTask, ExpensesForm.tasksFile, ExpensesForm.tasks); }
+
+                AddTaskForm.ActiveForm?.Close();
+            }
+        }
     }
     public class TrackBarNoFocus : TrackBar
     {

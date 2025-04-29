@@ -56,6 +56,7 @@
             textBoxTitle.Name = "textBoxTitle";
             textBoxTitle.Size = new Size(138, 27);
             textBoxTitle.TabIndex = 0;
+            textBoxTitle.TextChanged += textBoxTitle_TextChanged;
             // 
             // richTextBoxDescription2
             // 
@@ -186,6 +187,7 @@
             // 
             // buttonDone2
             // 
+            buttonDone2.Cursor = Cursors.Hand;
             buttonDone2.Enabled = false;
             buttonDone2.Location = new Point(186, 591);
             buttonDone2.Name = "buttonDone2";
@@ -193,6 +195,7 @@
             buttonDone2.TabIndex = 10;
             buttonDone2.Text = "Done";
             buttonDone2.UseVisualStyleBackColor = true;
+            buttonDone2.Click += buttonDone2_Click;
             // 
             // timer2
             // 

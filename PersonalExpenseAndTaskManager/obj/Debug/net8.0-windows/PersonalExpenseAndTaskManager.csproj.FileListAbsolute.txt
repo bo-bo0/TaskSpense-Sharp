@@ -36,3 +36,4 @@ C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Shar
 C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\obj\Debug\net8.0-windows\PersonalExpenseAndTaskManager.pdb
 C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\obj\Debug\net8.0-windows\PersonalExpenseAndTaskManager.genruntimeconfig.cache
 C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\obj\Debug\net8.0-windows\ref\PersonalExpenseAndTaskManager.dll
+C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\obj\Debug\net8.0-windows\PersonalExpenseAndTaskManager.sourcelink.json

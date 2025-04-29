@@ -10,9 +10,11 @@ namespace PersonalExpenseAndTaskManager
     public partial class ExpensesForm : Form
     {
         public static List<Expense> expenses = [];
+        public static List<Task> tasks = [];
 
         public static string? appFolder = null;
         public static string? expensesFile = null;
+        public static string? tasksFile = null;
         public static string localPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
         //stringa contenente l'indirrizzo della cartella locale dell'utente (%localappdata%)
 
@@ -21,31 +23,40 @@ namespace PersonalExpenseAndTaskManager
             InitializeComponent();
             this.KeyPreview = true; //per attivare gli eventi da tastiera
 
-            //inizializza cartella
+            //initialize floder
             appFolder = Path.Combine(localPath, "TaskSpense Sharp");
             Directory.CreateDirectory(appFolder); // Assicura che la cartella esista
 
-            //crea file json se non esiste
+
+            //create save files if not exist
             expensesFile = Path.Combine(appFolder, "Expenses.json");
             if (!File.Exists(expensesFile))
                 File.WriteAllText(expensesFile, null);
 
+            tasksFile = Path.Combine(appFolder, "Tasks.json");
+            if (!File.Exists(tasksFile))
+                File.WriteAllText(tasksFile, null);
+
+
+            //initialize tab control (only a not working test for now)
             var tabExpenses = new UserControl();
             tabPageExpenses.Controls.Add(tabExpenses);
 
             var tabTasks = new UserControl();
             tabPageExpenses.Controls.Add(tabTasks);
 
-            tabControl.SelectedIndex = 0;
 
-            var originalRed = new Size(panelRed.Width, panelRed.Height);
+            tabControl.SelectedIndex = 0;
         }
 
         private void ExpensesForm_Load(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Maximized; //set fullscreen
 
-            if (expensesFile != null)
+            if (expensesFile != null) { FileActions.readJsonContent(expensesFile, expenses, dataGridExpenses); }
+            if (tasksFile != null) { FileActions.readJsonContent(tasksFile, tasks, dataGridViewTasks); }
+
+            /*if (expensesFile != null)
             {
                 string json;
                 using (var r = new StreamReader(expensesFile)) { json = r.ReadToEnd(); }
@@ -68,8 +79,8 @@ namespace PersonalExpenseAndTaskManager
                         File.WriteAllText(expensesFile, null); //reset file
                     }
 
-                }
-            }
+                } 
+            }*/
         }
 
         private void ExpensesForm_KeyDown(object sender, KeyEventArgs e)
@@ -185,7 +196,7 @@ namespace PersonalExpenseAndTaskManager
                     var reverseExpenses = expenses.Reverse<Expense>().ToList();
 
                     foreach (var item in reverseExpenses)
-                        FileActions.addJsonContent(item, expensesFile);
+                        FileActions.addJsonContent(item, expensesFile, expenses);
                 }
             }
         }
