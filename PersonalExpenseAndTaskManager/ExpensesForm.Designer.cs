@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExpensesForm));
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             panelScreen = new Panel();
@@ -57,6 +57,7 @@
             buttonScreen = new PictureBox();
             tabPageTasks = new TabPage();
             panelGrid2 = new Panel();
+            labelNoSortResult = new Label();
             pictureBoxResetSort = new PictureBox();
             comboBoxSort = new ComboBox();
             dataGridViewTasks = new DataGridView();
@@ -300,31 +301,31 @@
             dataGridExpenses.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dataGridExpenses.BackgroundColor = Color.Chocolate;
             dataGridExpenses.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = SystemColors.Control;
-            dataGridViewCellStyle10.Font = new Font("Segoe UI", 15F);
-            dataGridViewCellStyle10.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
-            dataGridExpenses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 15F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridExpenses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridExpenses.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = SystemColors.Info;
-            dataGridViewCellStyle11.Font = new Font("Segoe UI", 15F);
-            dataGridViewCellStyle11.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
-            dataGridExpenses.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Info;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 15F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridExpenses.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridExpenses.GridColor = Color.Black;
             dataGridExpenses.Location = new Point(46, 91);
             dataGridExpenses.Name = "dataGridExpenses";
             dataGridExpenses.ReadOnly = true;
             dataGridExpenses.RowHeadersWidth = 25;
             dataGridExpenses.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle12.BackColor = Color.Cornsilk;
-            dataGridExpenses.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.BackColor = Color.Cornsilk;
+            dataGridExpenses.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dataGridExpenses.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridExpenses.ShowCellErrors = false;
             dataGridExpenses.ShowCellToolTips = false;
@@ -365,6 +366,7 @@
             panelGrid2.Anchor = AnchorStyles.Top;
             panelGrid2.AutoSize = true;
             panelGrid2.BackColor = Color.Transparent;
+            panelGrid2.Controls.Add(labelNoSortResult);
             panelGrid2.Controls.Add(pictureBoxResetSort);
             panelGrid2.Controls.Add(comboBoxSort);
             panelGrid2.Controls.Add(dataGridViewTasks);
@@ -372,6 +374,17 @@
             panelGrid2.Name = "panelGrid2";
             panelGrid2.Size = new Size(940, 523);
             panelGrid2.TabIndex = 14;
+            // 
+            // labelNoSortResult
+            // 
+            labelNoSortResult.AutoSize = true;
+            labelNoSortResult.Font = new Font("Segoe UI Semibold", 15F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            labelNoSortResult.Location = new Point(268, 127);
+            labelNoSortResult.Name = "labelNoSortResult";
+            labelNoSortResult.Size = new Size(160, 28);
+            labelNoSortResult.TabIndex = 17;
+            labelNoSortResult.Text = "No results found";
+            labelNoSortResult.Visible = false;
             // 
             // pictureBoxResetSort
             // 
@@ -383,6 +396,7 @@
             pictureBoxResetSort.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxResetSort.TabIndex = 16;
             pictureBoxResetSort.TabStop = false;
+            pictureBoxResetSort.Click += pictureBoxResetSort_Click;
             // 
             // comboBoxSort
             // 
@@ -395,6 +409,7 @@
             comboBoxSort.Name = "comboBoxSort";
             comboBoxSort.Size = new Size(143, 23);
             comboBoxSort.TabIndex = 15;
+            comboBoxSort.SelectedIndexChanged += comboBoxSort_SelectedIndexChanged;
             // 
             // dataGridViewTasks
             // 
@@ -405,31 +420,31 @@
             dataGridViewTasks.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dataGridViewTasks.BackgroundColor = Color.LightSalmon;
             dataGridViewTasks.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = SystemColors.Control;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 15F);
-            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dataGridViewTasks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 15F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridViewTasks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewTasks.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = SystemColors.Info;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 15F);
-            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dataGridViewTasks.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Info;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 15F);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dataGridViewTasks.DefaultCellStyle = dataGridViewCellStyle5;
             dataGridViewTasks.GridColor = Color.Black;
             dataGridViewTasks.Location = new Point(93, 91);
             dataGridViewTasks.Name = "dataGridViewTasks";
             dataGridViewTasks.ReadOnly = true;
             dataGridViewTasks.RowHeadersWidth = 25;
             dataGridViewTasks.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle9.BackColor = Color.Cornsilk;
-            dataGridViewTasks.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.BackColor = Color.Cornsilk;
+            dataGridViewTasks.RowsDefaultCellStyle = dataGridViewCellStyle6;
             dataGridViewTasks.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewTasks.ShowCellErrors = false;
             dataGridViewTasks.ShowCellToolTips = false;
@@ -437,6 +452,7 @@
             dataGridViewTasks.ShowRowErrors = false;
             dataGridViewTasks.Size = new Size(837, 428);
             dataGridViewTasks.TabIndex = 8;
+            dataGridViewTasks.CellDoubleClick += dataGridViewTasks_CellContentDoubleClick;
             // 
             // buttonScreen2
             // 
@@ -598,6 +614,7 @@
             tabPageTasks.ResumeLayout(false);
             tabPageTasks.PerformLayout();
             panelGrid2.ResumeLayout(false);
+            panelGrid2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxResetSort).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTasks).EndInit();
             ((System.ComponentModel.ISupportInitialize)buttonScreen2).EndInit();
@@ -646,5 +663,6 @@
         public DataGridView dataGridViewTasks;
         private ComboBox comboBoxSort;
         private PictureBox pictureBoxResetSort;
+        private Label labelNoSortResult;
     }
 }

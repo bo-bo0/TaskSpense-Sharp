@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.Eventing.Reader;
 using System.IO.Packaging;
 using System.Reflection.Metadata.Ecma335;
 using System.Runtime.InteropServices;
@@ -16,7 +17,7 @@ namespace PersonalExpenseAndTaskManager
         public static string? expensesFile = null;
         public static string? tasksFile = null;
         public static string localPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-        //stringa contenente l'indirrizzo della cartella locale dell'utente (%localappdata%)
+        //string contatin the path to the local folder of the user (%localappdata%)
 
         public ExpensesForm()
         {
@@ -91,7 +92,7 @@ namespace PersonalExpenseAndTaskManager
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            var response = MessageBox.Show("Are you sure you want to exit?", "Confirm requst", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var response = MessageBox.Show("Are you sure you want to exit?", "Confirm Request", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (response == DialogResult.Yes)
                 Close();
@@ -199,6 +200,7 @@ namespace PersonalExpenseAndTaskManager
                         FileActions.addJsonContent(item, expensesFile, expenses);
                 }
             }
+
         }
 
         private void pictureBoxResetCategory_Click(object sender, EventArgs e)
@@ -258,6 +260,171 @@ namespace PersonalExpenseAndTaskManager
         {
             var addTask = new AddTaskForm();
             addTask.ShowDialog();
+        }
+
+        private void pictureBoxResetSort_Click(object sender, EventArgs e)
+        {
+            labelNoSortResult.Visible = false;
+            comboBoxSort.Text = null;
+            if (tasks.Count > 0) { dataGridViewTasks.DataSource = tasks; return; }
+
+            dataGridViewTasks.DataSource = null;
+        }
+
+        private void comboBoxSort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var sortedTasks = new List<Task>(tasks);
+
+            dataGridViewTasks.DataSource = null;
+
+            if (!TextActions.spacesString(comboBoxSort.Text)) { labelNoSortResult.Visible = true; }
+
+            if (comboBoxSort.Text == "priority") { Sort.InsertionSortPriority(sortedTasks, dataGridViewTasks, labelNoSortResult, tasks); }
+
+            if (comboBoxSort.Text == "deadline" && tasks.Count > 1) { Sort.InsertionSortDeadline(sortedTasks, dataGridViewTasks, labelNoSortResult, tasks); }
+
+            else if (tasks.Count == 1) 
+            {
+
+                if (!TextActions.spacesString(tasks[0].Deadline ?? " ")) { dataGridViewTasks.DataSource = tasks; labelNoSortResult.Visible = false; }
+            }
+        }
+        
+        private void dataGridViewTasks_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) { return; }
+
+            var result = MessageBox.Show("Are you sure you want to delete this element?", "Confirm Request", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                if (TextActions.spacesString(comboBoxSort.Text))
+                {
+                    tasks.RemoveAt(e.RowIndex);
+                    dataGridViewTasks.DataSource = null;
+                    if (tasks.Count() > 0) { dataGridViewTasks.DataSource = tasks; }
+                }
+
+                else //correctly remove item if elements are sorted
+                {
+                    var phList = new List<Task>(tasks);
+
+                    if (comboBoxSort.Text == "priority")
+                        Sort.InsertionSortPriority(phList, dataGridViewTasks, labelNoSortResult, tasks);
+                 
+                    else //if == "deadline" 
+                        Sort.InsertionSortDeadline(phList, dataGridViewTasks, labelNoSortResult, tasks);
+                    
+                    foreach (var item in tasks)
+                    {
+                        if (item == phList[e.RowIndex])
+                        {
+                            tasks.Remove(item);
+                            dataGridViewTasks.DataSource = null;
+                            if (tasks.Count() > 0) { dataGridViewTasks.DataSource = tasks; }
+
+                            break;
+                        }
+                    }
+                }
+
+                //update file
+                if (tasksFile != null)
+                {
+                    File.WriteAllText(tasksFile, null);
+                    var reverseTasks = tasks.Reverse<Task>().ToList();
+
+                    foreach (var item in reverseTasks)
+                        FileActions.addJsonContent(item, tasksFile, tasks);
+                }
+            } 
+        }
+    }
+    public abstract class Sort
+    {
+        public static void InsertionSortPriority(List<Task> sortedTasks, DataGridView dataGridViewTasks, Label labelNoSortResult, List<Task> tasks)
+        {
+            bool flag = false;
+
+            //insertion sort
+            int item = 0;
+            for (int j = 1; j < sortedTasks.Count(); j++)
+            {
+                item = j;
+
+                for (int i = j - 1; i >= 0; i--)
+                {
+                    //empty priority fix
+
+                    if (sortedTasks[i].Priority == null) { sortedTasks[i].Priority = 0; }
+
+                    if (sortedTasks[item].Priority == null) { sortedTasks[item].Priority = 0; }
+
+                    if (sortedTasks[i].Priority < sortedTasks[item].Priority)
+                    {
+                        var ph = sortedTasks[item];
+                        sortedTasks[item] = sortedTasks[i];
+                        sortedTasks[i] = ph;
+                        item--;
+
+                        flag = true;
+                    }
+                }
+            }
+
+            /////
+
+            //0 removal
+            foreach (var item0 in sortedTasks)
+                if (item0.Priority == 0) { item0.Priority = null; }
+
+            if (flag) { dataGridViewTasks.DataSource = sortedTasks; labelNoSortResult.Visible = false; }
+        }
+
+        public static void InsertionSortDeadline(List<Task> sortedTasks, DataGridView dataGridViewTasks, Label labelNoSortResult, List<Task> tasks)
+        {
+            bool flag = false;
+
+            //insertion sort
+            int item = 0;
+            for (int j = 1; j < sortedTasks.Count(); j++)
+            {
+                item = j;
+
+                for (int i = j - 1; i >= 0; i--)
+                {
+                    //empty deadline fix
+                    if (TextActions.spacesString(sortedTasks[i].Deadline ?? " ")) { sortedTasks[i].Deadline = Convert.ToString(DateTime.MaxValue); }
+                    if (TextActions.spacesString(sortedTasks[item].Deadline ?? " ")) { sortedTasks[item].Deadline = Convert.ToString(DateTime.MaxValue); }
+
+                    TimeSpan ts1 = Convert.ToDateTime(sortedTasks[i].Deadline) - DateTime.MinValue;
+                    TimeSpan ts2 = Convert.ToDateTime(sortedTasks[item].Deadline) - DateTime.MinValue;
+
+                    if (ts1 > ts2)
+                    {
+                        var ph = sortedTasks[item];
+                        sortedTasks[item] = sortedTasks[i];
+                        sortedTasks[i] = ph;
+                        item--;
+
+                        flag = true;
+                    }
+                }
+            }
+
+            //max date removal
+            foreach (var dateMax in sortedTasks)
+            {
+                if (dateMax.Deadline == Convert.ToString(DateTime.MaxValue))
+                    dateMax.Deadline = null;
+
+            }
+
+            if (flag) { dataGridViewTasks.DataSource = sortedTasks; }
+
+            else { dataGridViewTasks.DataSource = tasks; }
+
+            labelNoSortResult.Visible = false;
         }
     }
 }
