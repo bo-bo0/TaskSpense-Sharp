@@ -70,6 +70,14 @@
             buttonGraphics2 = new Button();
             buttonExpenses = new Button();
             panelRed2 = new Panel();
+            tabPageGraphics = new TabPage();
+            buttonScreen3 = new PictureBox();
+            panelRedGraphics = new Panel();
+            buttonSettings3 = new Button();
+            buttonGraphicsInGraphics = new Button();
+            buttonExOrTas = new Button();
+            buttonExit3 = new Button();
+            cartesianChart1 = new LiveChartsCore.SkiaSharpView.WinForms.CartesianChart();
             tabControl.SuspendLayout();
             tabPageExpenses.SuspendLayout();
             PanelCenter.SuspendLayout();
@@ -85,6 +93,9 @@
             ((System.ComponentModel.ISupportInitialize)buttonScreen2).BeginInit();
             PanelCenter2.SuspendLayout();
             panel1.SuspendLayout();
+            tabPageGraphics.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)buttonScreen3).BeginInit();
+            panelRedGraphics.SuspendLayout();
             SuspendLayout();
             // 
             // panelScreen
@@ -102,6 +113,7 @@
             tabControl.Appearance = TabAppearance.FlatButtons;
             tabControl.Controls.Add(tabPageExpenses);
             tabControl.Controls.Add(tabPageTasks);
+            tabControl.Controls.Add(tabPageGraphics);
             tabControl.ItemSize = new Size(0, 1);
             tabControl.Location = new Point(-9, -8);
             tabControl.Name = "tabControl";
@@ -213,6 +225,7 @@
             buttonGraphics.TabIndex = 3;
             buttonGraphics.Text = "Graphics";
             buttonGraphics.UseVisualStyleBackColor = false;
+            buttonGraphics.Click += buttonGraphics_Click;
             buttonGraphics.MouseEnter += buttonGeneric_Hover;
             buttonGraphics.MouseLeave += buttonGeneric_Leave;
             // 
@@ -453,6 +466,7 @@
             dataGridViewTasks.Size = new Size(837, 428);
             dataGridViewTasks.TabIndex = 8;
             dataGridViewTasks.CellDoubleClick += dataGridViewTasks_CellContentDoubleClick;
+            dataGridViewTasks.CellMouseClick += dataGridViewTasks_CellMouseClick;
             // 
             // buttonScreen2
             // 
@@ -555,6 +569,7 @@
             buttonGraphics2.TabIndex = 3;
             buttonGraphics2.Text = "Graphics";
             buttonGraphics2.UseVisualStyleBackColor = false;
+            buttonGraphics2.Click += buttonGraphics_Click;
             buttonGraphics2.MouseEnter += buttonGeneric_Hover;
             buttonGraphics2.MouseLeave += buttonGeneric_Leave;
             // 
@@ -583,6 +598,125 @@
             panelRed2.Name = "panelRed2";
             panelRed2.Size = new Size(1732, 94);
             panelRed2.TabIndex = 12;
+            // 
+            // tabPageGraphics
+            // 
+            tabPageGraphics.Controls.Add(buttonScreen3);
+            tabPageGraphics.Controls.Add(panelRedGraphics);
+            tabPageGraphics.Controls.Add(cartesianChart1);
+            tabPageGraphics.Location = new Point(4, 5);
+            tabPageGraphics.Name = "tabPageGraphics";
+            tabPageGraphics.Size = new Size(1320, 725);
+            tabPageGraphics.TabIndex = 2;
+            tabPageGraphics.Text = "tabPageGraphics";
+            tabPageGraphics.UseVisualStyleBackColor = true;
+            tabPageGraphics.Click += buttonScreen_Click;
+            // 
+            // buttonScreen3
+            // 
+            buttonScreen3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonScreen3.Cursor = Cursors.Hand;
+            buttonScreen3.Image = (Image)resources.GetObject("buttonScreen3.Image");
+            buttonScreen3.Location = new Point(1250, 654);
+            buttonScreen3.Margin = new Padding(30, 10, 10, 10);
+            buttonScreen3.Name = "buttonScreen3";
+            buttonScreen3.Size = new Size(65, 66);
+            buttonScreen3.TabIndex = 7;
+            buttonScreen3.TabStop = false;
+            buttonScreen3.Click += buttonScreen_Click;
+            // 
+            // panelRedGraphics
+            // 
+            panelRedGraphics.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panelRedGraphics.BackColor = Color.Brown;
+            panelRedGraphics.Controls.Add(buttonSettings3);
+            panelRedGraphics.Controls.Add(buttonGraphicsInGraphics);
+            panelRedGraphics.Controls.Add(buttonExOrTas);
+            panelRedGraphics.Controls.Add(buttonExit3);
+            panelRedGraphics.Location = new Point(3, 3);
+            panelRedGraphics.Name = "panelRedGraphics";
+            panelRedGraphics.Size = new Size(1314, 95);
+            panelRedGraphics.TabIndex = 5;
+            // 
+            // buttonSettings3
+            // 
+            buttonSettings3.Anchor = AnchorStyles.Top;
+            buttonSettings3.AutoSize = true;
+            buttonSettings3.BackColor = Color.FromArgb(255, 192, 128);
+            buttonSettings3.Cursor = Cursors.Hand;
+            buttonSettings3.Font = new Font("Britannic Bold", 30F);
+            buttonSettings3.Location = new Point(364, 4);
+            buttonSettings3.Margin = new Padding(40, 0, 0, 0);
+            buttonSettings3.Name = "buttonSettings3";
+            buttonSettings3.Size = new Size(177, 86);
+            buttonSettings3.TabIndex = 1;
+            buttonSettings3.Text = "Settings";
+            buttonSettings3.UseVisualStyleBackColor = false;
+            buttonSettings3.MouseEnter += buttonGeneric_Hover;
+            buttonSettings3.MouseLeave += buttonGeneric_Leave;
+            // 
+            // buttonGraphicsInGraphics
+            // 
+            buttonGraphicsInGraphics.Anchor = AnchorStyles.Top;
+            buttonGraphicsInGraphics.AutoSize = true;
+            buttonGraphicsInGraphics.BackColor = Color.FromArgb(255, 192, 128);
+            buttonGraphicsInGraphics.Cursor = Cursors.Hand;
+            buttonGraphicsInGraphics.Font = new Font("Britannic Bold", 30F);
+            buttonGraphicsInGraphics.Location = new Point(692, 4);
+            buttonGraphicsInGraphics.Margin = new Padding(40, 0, 0, 0);
+            buttonGraphicsInGraphics.Name = "buttonGraphicsInGraphics";
+            buttonGraphicsInGraphics.Size = new Size(188, 86);
+            buttonGraphicsInGraphics.TabIndex = 3;
+            buttonGraphicsInGraphics.Text = "Graphics";
+            buttonGraphicsInGraphics.UseVisualStyleBackColor = false;
+            buttonGraphicsInGraphics.Click += buttonGraphicsInGraphics_Click;
+            buttonGraphicsInGraphics.MouseEnter += buttonGeneric_Hover;
+            buttonGraphicsInGraphics.MouseLeave += buttonGeneric_Leave;
+            // 
+            // buttonExOrTas
+            // 
+            buttonExOrTas.Anchor = AnchorStyles.Top;
+            buttonExOrTas.AutoSize = true;
+            buttonExOrTas.BackColor = Color.FromArgb(255, 192, 128);
+            buttonExOrTas.Cursor = Cursors.Hand;
+            buttonExOrTas.Font = new Font("Britannic Bold", 30F);
+            buttonExOrTas.Location = new Point(920, 4);
+            buttonExOrTas.Margin = new Padding(40, 0, 0, 0);
+            buttonExOrTas.Name = "buttonExOrTas";
+            buttonExOrTas.Size = new Size(167, 86);
+            buttonExOrTas.TabIndex = 4;
+            buttonExOrTas.Text = "Tasks";
+            buttonExOrTas.UseVisualStyleBackColor = false;
+            buttonExOrTas.Click += buttonExOrTas_Click;
+            buttonExOrTas.MouseEnter += buttonGeneric_Hover;
+            buttonExOrTas.MouseLeave += buttonGeneric_Leave;
+            // 
+            // buttonExit3
+            // 
+            buttonExit3.Anchor = AnchorStyles.Top;
+            buttonExit3.AutoSize = true;
+            buttonExit3.BackColor = Color.FromArgb(255, 192, 128);
+            buttonExit3.Cursor = Cursors.Hand;
+            buttonExit3.Font = new Font("Britannic Bold", 30F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonExit3.Location = new Point(154, 4);
+            buttonExit3.Margin = new Padding(40, 0, 0, 0);
+            buttonExit3.Name = "buttonExit3";
+            buttonExit3.Size = new Size(170, 86);
+            buttonExit3.TabIndex = 0;
+            buttonExit3.Text = "Exit";
+            buttonExit3.UseVisualStyleBackColor = false;
+            buttonExit3.Click += buttonExit_Click;
+            buttonExit3.MouseEnter += buttonGeneric_Hover;
+            buttonExit3.MouseLeave += buttonGeneric_Leave;
+            // 
+            // cartesianChart1
+            // 
+            cartesianChart1.Anchor = AnchorStyles.None;
+            cartesianChart1.Location = new Point(311, 182);
+            cartesianChart1.MatchAxesScreenDataRatio = false;
+            cartesianChart1.Name = "cartesianChart1";
+            cartesianChart1.Size = new Size(654, 437);
+            cartesianChart1.TabIndex = 0;
             // 
             // ExpensesForm
             // 
@@ -622,6 +756,10 @@
             PanelCenter2.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            tabPageGraphics.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)buttonScreen3).EndInit();
+            panelRedGraphics.ResumeLayout(false);
+            panelRedGraphics.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -664,5 +802,13 @@
         private ComboBox comboBoxSort;
         private PictureBox pictureBoxResetSort;
         private Label labelNoSortResult;
+        private TabPage tabPageGraphics;
+        private LiveChartsCore.SkiaSharpView.WinForms.CartesianChart cartesianChart1;
+        private Button buttonExit3;
+        private Button buttonSettings3;
+        private Button buttonGraphicsInGraphics;
+        private Button buttonExOrTas;
+        private Panel panelRedGraphics;
+        private PictureBox buttonScreen3;
     }
 }

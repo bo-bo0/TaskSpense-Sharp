@@ -1,7 +1,11 @@
+using LiveChartsCore;
+using LiveChartsCore.SkiaSharpView;
 using System;
 using System.Diagnostics.Eventing.Reader;
+using System.Globalization;
 using System.IO.Packaging;
 using System.Reflection.Metadata.Ecma335;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text.Json;
 using System.Windows.Forms;
@@ -17,8 +21,7 @@ namespace PersonalExpenseAndTaskManager
         public static string? expensesFile = null;
         public static string? tasksFile = null;
         public static string localPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-        //string contatin the path to the local folder of the user (%localappdata%)
-
+        //string contatining the path to the local folder of the user (%localappdata%)
         public ExpensesForm()
         {
             InitializeComponent();
@@ -56,32 +59,6 @@ namespace PersonalExpenseAndTaskManager
 
             if (expensesFile != null) { FileActions.readJsonContent(expensesFile, expenses, dataGridExpenses); }
             if (tasksFile != null) { FileActions.readJsonContent(tasksFile, tasks, dataGridViewTasks); }
-
-            /*if (expensesFile != null)
-            {
-                string json;
-                using (var r = new StreamReader(expensesFile)) { json = r.ReadToEnd(); }
-
-                if (json == "") return; //se il file è vuoto non fa nulla
-                try
-                {
-                    expenses = JsonSerializer.Deserialize<List<Expense>>(json) ?? new List<Expense>();
-                    dataGridExpenses.DataSource = expenses;
-                }
-                catch
-                {
-
-                    var answer = MessageBox.Show("It was not possible to read the save files. Press Ok to create new data or Cancel to close the application.", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                    if (answer == DialogResult.Cancel)
-                        Close();
-                    else
-                    {
-                        dataGridExpenses.DataSource = null;
-                        File.WriteAllText(expensesFile, null); //reset file
-                    }
-
-                } 
-            }*/
         }
 
         private void ExpensesForm_KeyDown(object sender, KeyEventArgs e)
@@ -106,6 +83,7 @@ namespace PersonalExpenseAndTaskManager
 
                 buttonScreen.Image = Image.FromStream(fs);
                 buttonScreen2.Image = Image.FromStream(fs);
+                buttonScreen3.Image = Image.FromStream(fs);
             }
             else
             {
@@ -113,6 +91,7 @@ namespace PersonalExpenseAndTaskManager
 
                 buttonScreen.Image = Image.FromStream(ws);
                 buttonScreen2.Image = Image.FromStream(ws);
+                buttonScreen3.Image = Image.FromStream(ws);
             }
 
             panelRed.Size = new Size(Width, panelRed.Height); //resize panel red
@@ -154,6 +133,8 @@ namespace PersonalExpenseAndTaskManager
 
             if (result == DialogResult.Yes)
             {
+                Global.AlreadyCartesian = false;
+
                 dataGridExpenses.DataSource = null;
 
                 if (TextActions.spacesString(comboBoxFilterCategory.Text))
@@ -249,11 +230,13 @@ namespace PersonalExpenseAndTaskManager
         private void buttonTasks_Click(object sender, EventArgs e)
         {
             tabControl.SelectedIndex = 1;
+            Global.CurrentPage = "Tasks";
         }
 
         private void buttonExpenses_Click(object sender, EventArgs e)
         {
             tabControl.SelectedIndex = 0;
+            Global.CurrentPage = "Expenses";
         }
 
         private void labelPlus2_Click(object sender, EventArgs e)
@@ -283,13 +266,13 @@ namespace PersonalExpenseAndTaskManager
 
             if (comboBoxSort.Text == "deadline" && tasks.Count > 1) { Sort.InsertionSortDeadline(sortedTasks, dataGridViewTasks, labelNoSortResult, tasks); }
 
-            else if (tasks.Count == 1) 
+            else if (tasks.Count == 1)
             {
 
                 if (!TextActions.spacesString(tasks[0].Deadline ?? " ")) { dataGridViewTasks.DataSource = tasks; labelNoSortResult.Visible = false; }
             }
         }
-        
+
         private void dataGridViewTasks_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) { return; }
@@ -311,10 +294,10 @@ namespace PersonalExpenseAndTaskManager
 
                     if (comboBoxSort.Text == "priority")
                         Sort.InsertionSortPriority(phList, dataGridViewTasks, labelNoSortResult, tasks);
-                 
+
                     else //if == "deadline" 
                         Sort.InsertionSortDeadline(phList, dataGridViewTasks, labelNoSortResult, tasks);
-                    
+
                     foreach (var item in tasks)
                     {
                         if (item == phList[e.RowIndex])
@@ -337,7 +320,108 @@ namespace PersonalExpenseAndTaskManager
                     foreach (var item in reverseTasks)
                         FileActions.addJsonContent(item, tasksFile, tasks);
                 }
-            } 
+            }
+        }
+
+        private void dataGridViewTasks_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right && e.ColumnIndex == 1 && e.RowIndex >= 0)
+            {
+                dataGridViewTasks.Visible = false;
+                Global.FullDescriptionFlag = true;
+
+                //description area
+                string? current_description = $"{dataGridViewTasks.Rows[e.RowIndex].Cells[e.ColumnIndex].Value}";
+                var DescriptionShower = new RichTextBox();
+                DescriptionShower.Text = current_description;
+                DescriptionShower.Location = new Point(223, 130);
+                DescriptionShower.Size = new Size(240, 200);
+                DescriptionShower.ReadOnly = true;
+                DescriptionShower.Font = new Font("Arial", 12);
+                panelGrid2.Controls.Add(DescriptionShower);
+
+                //back button
+                var BackButton = new Button();
+                BackButton.Size = new Size(120, 40);
+                BackButton.Location = new Point(223, 100);
+                BackButton.Text = "Back";
+                BackButton.Font = new Font("Arial", 10);
+                BackButton.Cursor = Cursors.Hand;
+                BackButton.Name = "BackButton";
+                BackButton.Click += BackButton_Click;
+                panelGrid2.Controls.Add(BackButton);
+            }
+        }
+
+        private void BackButton_Click(object? sender, EventArgs e)
+        {
+            var button = sender as Button;
+
+            if (button == null) { return; }
+
+            if (button.Name == "BackButton")
+            {
+
+                panelGrid2.Controls.Remove(button);
+                panelGrid2.Controls.Remove(panelGrid2.Controls.OfType<RichTextBox>().FirstOrDefault());
+
+                dataGridViewTasks.Visible = true;
+                Global.FullDescriptionFlag = false;
+            }
+        }
+
+        private void buttonGraphics_Click(object sender, EventArgs e)
+        {
+            if (!Global.AlreadyCartesian)
+            {
+                var expensesValues = new List<double>();
+
+                foreach (var item in expenses)
+                    expensesValues.Add(Convert.ToDouble(item.Amount, CultureInfo.InvariantCulture));
+
+                expensesValues.Reverse();
+
+                var lineSeries = new LineSeries<double>
+                {
+                    Values = expensesValues,
+                    Fill = null
+                };
+
+                cartesianChart1.Series = new ISeries[] { lineSeries };
+
+                cartesianChart1.Update();
+
+                Global.AlreadyCartesian = true;
+            }
+            buttonExOrTas.Text = Global.CurrentPage;
+
+            tabControl.SelectedIndex = 2;
+        }
+
+        private void buttonGraphicsInGraphics_Click(object sender, EventArgs e)
+        {
+            var expensesValues = new List<double>();
+
+            foreach (var item in expenses)
+                expensesValues.Add(Convert.ToDouble(item.Amount));
+
+            expensesValues.Reverse();
+
+            var lineSeries = new LineSeries<double>
+            {
+                Values = expensesValues,
+                Fill = null
+            };
+
+            cartesianChart1.Series = new ISeries[] { lineSeries };
+
+            cartesianChart1.Update();
+        }
+
+        private void buttonExOrTas_Click(object sender, EventArgs e)
+        {
+            if (Global.CurrentPage == "Expenses") { tabControl.SelectedIndex = 0; }
+            else if (Global.CurrentPage == "Tasks") { tabControl.SelectedIndex = 1; }
         }
     }
     public abstract class Sort
@@ -426,5 +510,11 @@ namespace PersonalExpenseAndTaskManager
 
             labelNoSortResult.Visible = false;
         }
+    }
+    public abstract class Global 
+    {
+        public static bool FullDescriptionFlag = false;
+        public static bool AlreadyCartesian = false;
+        public static string CurrentPage = "Expenses"; //Graphics page excluded
     }
 }

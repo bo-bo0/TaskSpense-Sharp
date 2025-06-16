@@ -23,11 +23,13 @@ namespace PersonalExpenseAndTaskManager
             TextActions.inputBlock(textBoxAmount, 11);
 
             int i = 0;
+            bool hasCommaOrDot = false;
+            int afterCounter = 0;
 
             foreach (var character in textBoxAmount.Text)
             {
 
-                if (!char.IsDigit(character))
+                if (!char.IsDigit(character) && character != '.' && character != ',')
                 {
                     textBoxAmount.Text = $"{textBoxAmount.Text.Substring(0, i)}{textBoxAmount.Text.Substring(i + 1, textBoxAmount.Text.Length - (i + 1))}";
                     textBoxAmount.SelectionStart = i;
@@ -35,6 +37,28 @@ namespace PersonalExpenseAndTaskManager
                     break;
                 }
 
+                if (i > 0 && (textBoxAmount.Text[i] == '.' || textBoxAmount.Text[i] == ','))
+                {
+                    if ((textBoxAmount.Text[i - 1] == '.' || textBoxAmount.Text[i - 1] == ',') || hasCommaOrDot)
+                    {
+                        textBoxAmount.Text = $"{textBoxAmount.Text.Substring(0, i)}";
+                        textBoxAmount.SelectionStart = i;
+                    }
+
+                    hasCommaOrDot = true;
+                }
+
+                else if (textBoxAmount.Text[i] == '.' || textBoxAmount.Text[i] == ',')
+                    textBoxAmount.Text = null;
+
+                if (hasCommaOrDot) { afterCounter++; }
+
+                if(afterCounter > 3)
+                {
+                    textBoxAmount.Text = $"{textBoxAmount.Text.Substring(0, i)}";
+                    textBoxAmount.SelectionStart = i;
+                }
+                
                 i++;
             }
 
@@ -53,6 +77,11 @@ namespace PersonalExpenseAndTaskManager
             {
                 if (AddExpenseForm.ActiveForm != null)
                 {
+                    foreach (var item in textBoxAmount.Text) 
+                    {
+                        if (item == '.') { textBoxAmount.Text = textBoxAmount.Text.Replace('.', ','); break; }
+                    }
+
                     var newExpense = new Expense((comboBoxInOut.Text == "Income") ? $"+{textBoxAmount.Text}" : $"-{textBoxAmount.Text}", Convert.ToString(dateTimePicker.Value), comboBoxCategory.Text, richTextBoxDescription.Text, textBoxIntermediate.Text);
                     ExpensesForm.expenses.Insert(0,newExpense);
                     
@@ -65,6 +94,8 @@ namespace PersonalExpenseAndTaskManager
                         currMainForm.dataGridExpenses.DataSource = null;
                         currMainForm.dataGridExpenses.DataSource = ExpensesForm.expenses;
                     }
+
+                    Global.AlreadyCartesian = false;
 
                     AddExpenseForm.ActiveForm.Close();
                 }

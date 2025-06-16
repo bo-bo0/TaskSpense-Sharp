@@ -28,6 +28,8 @@ namespace PersonalExpenseAndTaskManager
         { 
             get
             {
+                if (Global.FullDescriptionFlag) return description ?? "";
+
                 if (description?.Length < 13)
                     return description;
 

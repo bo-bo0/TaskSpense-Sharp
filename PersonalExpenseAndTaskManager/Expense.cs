@@ -9,7 +9,7 @@ namespace PersonalExpenseAndTaskManager
     public class Expense
     {
         //constructor
-        public Expense(string amount, string date, string category, string description,string intermediate)
+        public Expense(string amount, string date, string category, string description, string intermediate)
         {
             Amount = amount;
             Date = date;

@@ -1,8 +1,99 @@
 {
   "version": 2,
-  "dgSpecHash": "ENaJxkNu5O8=",
+  "dgSpecHash": "qCRhnJWjri8=",
   "success": true,
   "projectFilePath": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "expectedPackageFiles": [
+    "C:\\Users\\Proprietario\\.nuget\\packages\\harfbuzzsharp\\8.3.0.1\\harfbuzzsharp.8.3.0.1.nupkg.sha512",
+    "C:\\Users\\Proprietario\\.nuget\\packages\\harfbuzzsharp.nativeassets.macos\\8.3.0.1\\harfbuzzsharp.nativeassets.macos.8.3.0.1.nupkg.sha512",
+    "C:\\Users\\Proprietario\\.nuget\\packages\\harfbuzzsharp.nativeassets.win32\\8.3.0.1\\harfbuzzsharp.nativeassets.win32.8.3.0.1.nupkg.sha512",
+    "C:\\Users\\Proprietario\\.nuget\\packages\\livecharts\\0.9.7\\livecharts.0.9.7.nupkg.sha512",
+    "C:\\Users\\Proprietario\\.nuget\\packages\\livecharts.winforms\\0.9.7.1\\livecharts.winforms.0.9.7.1.nupkg.sha512",
+    "C:\\Users\\Proprietario\\.nuget\\packages\\livecharts.wpf\\0.9.7\\livecharts.wpf.0.9.7.nupkg.sha512",
+    "C:\\Users\\Proprietario\\.nuget\\packages\\livechartscore\\2.0.0-rc5.4\\livechartscore.2.0.0-rc5.4.nupkg.sha512",
+    "C:\\Users\\Proprietario\\.nuget\\packages\\livechartscore.skiasharpview\\2.0.0-rc5.4\\livechartscore.skiasharpview.2.0.0-rc5.4.nupkg.sha512",
+    "C:\\Users\\Proprietario\\.nuget\\packages\\livechartscore.skiasharpview.winforms\\2.0.0-rc5.4\\livechartscore.skiasharpview.winforms.2.0.0-rc5.4.nupkg.sha512",
+    "C:\\Users\\Proprietario\\.nuget\\packages\\opentk\\3.1.0\\opentk.3.1.0.nupkg.sha512",
+    "C:\\Users\\Proprietario\\.nuget\\packages\\opentk.glcontrol\\3.1.0\\opentk.glcontrol.3.1.0.nupkg.sha512",
+    "C:\\Users\\Proprietario\\.nuget\\packages\\skiasharp\\3.116.1\\skiasharp.3.116.1.nupkg.sha512",
+    "C:\\Users\\Proprietario\\.nuget\\packages\\skiasharp.harfbuzz\\3.116.1\\skiasharp.harfbuzz.3.116.1.nupkg.sha512",
+    "C:\\Users\\Proprietario\\.nuget\\packages\\skiasharp.nativeassets.macos\\3.116.1\\skiasharp.nativeassets.macos.3.116.1.nupkg.sha512",
+    "C:\\Users\\Proprietario\\.nuget\\packages\\skiasharp.nativeassets.win32\\3.116.1\\skiasharp.nativeassets.win32.3.116.1.nupkg.sha512",
+    "C:\\Users\\Proprietario\\.nuget\\packages\\skiasharp.views.desktop.common\\3.116.1\\skiasharp.views.desktop.common.3.116.1.nupkg.sha512",
+    "C:\\Users\\Proprietario\\.nuget\\packages\\skiasharp.views.windowsforms\\3.116.1\\skiasharp.views.windowsforms.3.116.1.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "Package 'LiveCharts 0.9.7' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
+      "projectPath": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj",
+      "libraryId": "LiveCharts",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "Package 'LiveCharts.WinForms 0.9.7.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
+      "projectPath": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj",
+      "libraryId": "LiveCharts.WinForms",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "Package 'LiveCharts.Wpf 0.9.7' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
+      "projectPath": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj",
+      "libraryId": "LiveCharts.Wpf",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "Package 'OpenTK 3.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
+      "projectPath": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj",
+      "libraryId": "OpenTK",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "Package 'OpenTK.GLControl 3.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
+      "projectPath": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj",
+      "libraryId": "OpenTK.GLControl",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "Package 'SkiaSharp.Views.WindowsForms 3.116.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
+      "projectPath": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj",
+      "libraryId": "SkiaSharp.Views.WindowsForms",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    }
+  ]
 }
