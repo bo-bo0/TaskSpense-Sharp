@@ -25,11 +25,11 @@ namespace PersonalExpenseAndTaskManager
         public ExpensesForm()
         {
             InitializeComponent();
-            this.KeyPreview = true; //per attivare gli eventi da tastiera
+            this.KeyPreview = true; // activate key preview to capture key events
 
             //initialize floder
             appFolder = Path.Combine(localPath, "TaskSpense Sharp");
-            Directory.CreateDirectory(appFolder); // Assicura che la cartella esista
+            Directory.CreateDirectory(appFolder); // make sure the folder exists
 
 
             //create save files if not exist
@@ -41,9 +41,8 @@ namespace PersonalExpenseAndTaskManager
             if (!File.Exists(tasksFile))
                 File.WriteAllText(tasksFile, null);
 
-
-            //initialize tab control (only a not working test for now)
-            var tabExpenses = new UserControl();
+                //initialize tab control (only a not working test for now)
+                var tabExpenses = new UserControl();
             tabPageExpenses.Controls.Add(tabExpenses);
 
             var tabTasks = new UserControl();
@@ -59,6 +58,31 @@ namespace PersonalExpenseAndTaskManager
 
             if (expensesFile != null) { FileActions.readJsonContent(expensesFile, expenses, dataGridExpenses); }
             if (tasksFile != null) { FileActions.readJsonContent(tasksFile, tasks, dataGridViewTasks); }
+
+            //theme file
+            if (appFolder != null)
+            {
+                var file_theme = Path.Combine(appFolder, "Theme.json");
+
+                if (!File.Exists(file_theme))
+                { Global.LightTheme = true; }
+
+                else
+                {
+                    string? value = File.ReadAllText(file_theme);
+
+                    if (value != null && !TextActions.spacesString(value))
+                    {
+                        var flag = value.Substring(15);
+
+                        if (flag == "True" || flag == "False")
+                        {
+                            Global.LightTheme = Convert.ToBoolean(flag);
+                            if (ActiveForm != null) { Global.UpdateTheme(ActiveForm); }
+                        }
+                    }
+                }
+            }
         }
 
         private void ExpensesForm_KeyDown(object sender, KeyEventArgs e)
@@ -423,6 +447,12 @@ namespace PersonalExpenseAndTaskManager
             if (Global.CurrentPage == "Expenses") { tabControl.SelectedIndex = 0; }
             else if (Global.CurrentPage == "Tasks") { tabControl.SelectedIndex = 1; }
         }
+
+        private void buttonSettings_Click(object sender, EventArgs e)
+        {
+            var settings = new SettingsForm();
+            settings.ShowDialog();
+        }
     }
     public abstract class Sort
     {
@@ -513,8 +543,67 @@ namespace PersonalExpenseAndTaskManager
     }
     public abstract class Global 
     {
+        //global variables
         public static bool FullDescriptionFlag = false;
         public static bool AlreadyCartesian = false;
         public static string CurrentPage = "Expenses"; //Graphics page excluded
+        public static bool LightTheme = true;
+        public static string? themeFile = null;
+
+        //global methods
+        public static T? FindControlRecursive<T>(Control parent) where T : Control
+        {
+            foreach (Control control in parent.Controls)
+            {
+                if (control is T tControl)
+                    return tControl;
+                var found = FindControlRecursive<T>(control);
+                if (found != null)
+                    return found;
+            }
+            return null;
+        }
+        public static void UpdateTheme(Form form)
+        {
+            var TC = form.Controls.OfType<TabControl>().FirstOrDefault();
+
+            if (TC != null) 
+            {
+
+                if (LightTheme)
+                {
+                    TC.TabPages[0].BackColor = Color.Chocolate; //form background
+                    //datagrid background
+                    var dataGridView = FindControlRecursive<DataGridView>(TC.TabPages[0]);
+                    if (dataGridView != null) { dataGridView.BackgroundColor = Color.Chocolate; }
+
+                    TC.TabPages[1].BackColor = Color.LightSalmon; //form background
+                    //datagrid background
+                    dataGridView = FindControlRecursive<DataGridView>(TC.TabPages[1]);
+                    if (dataGridView != null) { dataGridView.BackgroundColor = Color.LightSalmon; }
+
+                    TC.TabPages[2].BackColor = Color.White; //form background
+                }
+                else
+                {
+                    TC.TabPages[0].BackColor = Color.Brown; //form background
+                    //datagrid background
+                    var dataGridView = FindControlRecursive<DataGridView>(TC.TabPages[0]);
+                    if (dataGridView != null) { dataGridView.BackgroundColor = Color.Brown; }
+
+                    TC.TabPages[1].BackColor = Color.Gray; //form background
+                    //datagrid background
+                    dataGridView = FindControlRecursive<DataGridView>(TC.TabPages[1]);
+                    if (dataGridView != null) { dataGridView.BackgroundColor = Color.Gray; }
+
+                    TC.TabPages[2].BackColor = Color.Black; //form background
+                }
+                if (ExpensesForm.appFolder != null)
+                    { themeFile = Path.Combine(ExpensesForm.appFolder, "Theme.json"); }
+
+                if (themeFile != null)
+                    { File.WriteAllText(themeFile, $"\"light_theme\": {LightTheme}"); }
+            }
+        }
     }
 }

@@ -60,3 +60,4 @@ C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Shar
 C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Debug\net8.0-windows\runtimes\win-arm64\native\libSkiaSharp.dll
 C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Debug\net8.0-windows\runtimes\win-x64\native\libSkiaSharp.dll
 C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Debug\net8.0-windows\runtimes\win-x86\native\libSkiaSharp.dll
+C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\obj\Debug\net8.0-windows\PersonalExpenseAndTaskManager.SettingsForm.resources
