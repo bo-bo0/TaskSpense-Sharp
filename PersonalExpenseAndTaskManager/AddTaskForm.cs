@@ -52,7 +52,7 @@ namespace PersonalExpenseAndTaskManager
 
             if (answer == DialogResult.Yes)
             {
-                var newTask = new Task(textBoxTitle.Text, richTextBoxDescription2.Text, (checkBoxActivedeadline.Checked) ? Convert.ToString(dateTimePickerDeadline.Value) : null, (checkBoxActivePriority.Checked) ? trackBarPriority.Value : null);
+                var newTask = new Task(textBoxTitle.Text, richTextBoxDescription2.Text, (checkBoxActivedeadline.Checked) ? Convert.ToString(dateTimePickerDeadline.Value.ToShortDateString()) : null, (checkBoxActivePriority.Checked) ? trackBarPriority.Value : null);
 
                 ExpensesForm.tasks.Insert(0, newTask);
 

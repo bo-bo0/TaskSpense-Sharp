@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalExpenseAndTaskManager", "PersonalExpenseAndTaskManager\PersonalExpenseAndTaskManager.csproj", "{37532DB7-2AA7-47C5-9440-BCA336DFA099}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TaskSpense Sharp Setup", "TaskSpense Sharp Setup\TaskSpense Sharp Setup.vdproj", "{9B9B4676-F0F9-0EF6-EA76-4A6CCA778442}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37532DB7-2AA7-47C5-9440-BCA336DFA099}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37532DB7-2AA7-47C5-9440-BCA336DFA099}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37532DB7-2AA7-47C5-9440-BCA336DFA099}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37532DB7-2AA7-47C5-9440-BCA336DFA099}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B9B4676-F0F9-0EF6-EA76-4A6CCA778442}.Debug|Any CPU.ActiveCfg = Debug
+		{9B9B4676-F0F9-0EF6-EA76-4A6CCA778442}.Release|Any CPU.ActiveCfg = Release
+		{9B9B4676-F0F9-0EF6-EA76-4A6CCA778442}.Release|Any CPU.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CAA7FE90-F543-47F3-A0A6-84EBA052EDE7}
+	EndGlobalSection
+EndGlobal

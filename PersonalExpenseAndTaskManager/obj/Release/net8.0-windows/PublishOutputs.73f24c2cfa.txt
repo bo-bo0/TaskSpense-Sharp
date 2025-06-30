@@ -1,0 +1,26 @@
+C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Release\net8.0-windows\publish\TaskSpense Sharp.exe
+C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Release\net8.0-windows\publish\TaskSpense Sharp.dll
+C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Release\net8.0-windows\publish\TaskSpense Sharp.deps.json
+C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Release\net8.0-windows\publish\TaskSpense Sharp.runtimeconfig.json
+C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Release\net8.0-windows\publish\TaskSpense Sharp.pdb
+C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Release\net8.0-windows\publish\HarfBuzzSharp.dll
+C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Release\net8.0-windows\publish\LiveCharts.dll
+C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Release\net8.0-windows\publish\LiveCharts.WinForms.dll
+C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Release\net8.0-windows\publish\LiveCharts.Wpf.dll
+C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Release\net8.0-windows\publish\LiveChartsCore.dll
+C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Release\net8.0-windows\publish\LiveChartsCore.SkiaSharpView.dll
+C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Release\net8.0-windows\publish\LiveChartsCore.SkiaSharpView.WinForms.dll
+C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Release\net8.0-windows\publish\OpenTK.dll
+C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Release\net8.0-windows\publish\OpenTK.GLControl.dll
+C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Release\net8.0-windows\publish\SkiaSharp.dll
+C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Release\net8.0-windows\publish\SkiaSharp.HarfBuzz.dll
+C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Release\net8.0-windows\publish\SkiaSharp.Views.Desktop.Common.dll
+C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Release\net8.0-windows\publish\SkiaSharp.Views.WindowsForms.dll
+C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Release\net8.0-windows\publish\runtimes\osx\native\libHarfBuzzSharp.dylib
+C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Release\net8.0-windows\publish\runtimes\win-arm64\native\libHarfBuzzSharp.dll
+C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Release\net8.0-windows\publish\runtimes\win-x64\native\libHarfBuzzSharp.dll
+C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Release\net8.0-windows\publish\runtimes\win-x86\native\libHarfBuzzSharp.dll
+C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Release\net8.0-windows\publish\runtimes\osx\native\libSkiaSharp.dylib
+C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Release\net8.0-windows\publish\runtimes\win-arm64\native\libSkiaSharp.dll
+C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Release\net8.0-windows\publish\runtimes\win-x64\native\libSkiaSharp.dll
+C:\Users\Proprietario\source\repos\PersonalExpenseAndTaskManager\TaskSpense-Sharp\PersonalExpenseAndTaskManager\bin\Release\net8.0-windows\publish\runtimes\win-x86\native\libSkiaSharp.dll

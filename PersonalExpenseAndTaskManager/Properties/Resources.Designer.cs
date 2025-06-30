@@ -63,9 +63,48 @@ namespace PersonalExpenseAndTaskManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] bell {
+            get {
+                object obj = ResourceManager.GetObject("bell", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] bell_notify {
+            get {
+                object obj = ResourceManager.GetObject("bell_notify", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream click {
+            get {
+                return ResourceManager.GetStream("click", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] fulls {
             get {
                 object obj = ResourceManager.GetObject("fulls", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] logo_ts_sharp {
+            get {
+                object obj = ResourceManager.GetObject("logo_ts_sharp", resourceCulture);
                 return ((byte[])(obj));
             }
         }

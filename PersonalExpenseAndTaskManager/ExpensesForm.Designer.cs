@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExpensesForm));
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             panelScreen = new Panel();
@@ -48,14 +49,16 @@
             labelPlus = new Label();
             buttonGraphics = new Button();
             buttonTasks = new Button();
-            panelRed = new Panel();
             panelGrid = new Panel();
             comboBoxFilterCategory = new ComboBox();
             pictureBoxResetCategory = new PictureBox();
             labelNoFilterResult = new Label();
             dataGridExpenses = new DataGridView();
             buttonScreen = new PictureBox();
+            panelRed = new Panel();
             tabPageTasks = new TabPage();
+            flowLayoutPanelNotifications = new FlowLayoutPanel();
+            pictureBoxBell = new PictureBox();
             panelGrid2 = new Panel();
             labelNoSortResult = new Label();
             pictureBoxResetSort = new PictureBox();
@@ -78,6 +81,7 @@
             buttonExOrTas = new Button();
             buttonExit3 = new Button();
             cartesianChart1 = new LiveChartsCore.SkiaSharpView.WinForms.CartesianChart();
+            timerNotifyCheck = new System.Windows.Forms.Timer(components);
             tabControl.SuspendLayout();
             tabPageExpenses.SuspendLayout();
             PanelCenter.SuspendLayout();
@@ -87,6 +91,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridExpenses).BeginInit();
             ((System.ComponentModel.ISupportInitialize)buttonScreen).BeginInit();
             tabPageTasks.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxBell).BeginInit();
             panelGrid2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxResetSort).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTasks).BeginInit();
@@ -126,9 +131,9 @@
             // 
             tabPageExpenses.BackColor = Color.Chocolate;
             tabPageExpenses.Controls.Add(PanelCenter);
-            tabPageExpenses.Controls.Add(panelRed);
             tabPageExpenses.Controls.Add(panelGrid);
             tabPageExpenses.Controls.Add(buttonScreen);
+            tabPageExpenses.Controls.Add(panelRed);
             tabPageExpenses.Location = new Point(4, 5);
             tabPageExpenses.Name = "tabPageExpenses";
             tabPageExpenses.Padding = new Padding(3);
@@ -248,14 +253,6 @@
             buttonTasks.MouseEnter += buttonGeneric_Hover;
             buttonTasks.MouseLeave += buttonGeneric_Leave;
             // 
-            // panelRed
-            // 
-            panelRed.BackColor = Color.Firebrick;
-            panelRed.Location = new Point(5, 3);
-            panelRed.Name = "panelRed";
-            panelRed.Size = new Size(1711, 94);
-            panelRed.TabIndex = 10;
-            // 
             // panelGrid
             // 
             panelGrid.Anchor = AnchorStyles.Top;
@@ -315,37 +312,37 @@
             dataGridExpenses.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dataGridExpenses.BackgroundColor = Color.Chocolate;
             dataGridExpenses.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = SystemColors.Control;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 15F);
-            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dataGridExpenses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 15F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridExpenses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridExpenses.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = SystemColors.Info;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 15F);
-            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dataGridExpenses.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Info;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 15F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridExpenses.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridExpenses.GridColor = Color.Black;
             dataGridExpenses.Location = new Point(46, 91);
             dataGridExpenses.Name = "dataGridExpenses";
             dataGridExpenses.ReadOnly = true;
             dataGridExpenses.RowHeadersWidth = 25;
             dataGridExpenses.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle9.BackColor = Color.Cornsilk;
-            dataGridExpenses.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.BackColor = Color.Cornsilk;
+            dataGridExpenses.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dataGridExpenses.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridExpenses.ShowCellErrors = false;
             dataGridExpenses.ShowCellToolTips = false;
             dataGridExpenses.ShowEditingIcon = false;
             dataGridExpenses.ShowRowErrors = false;
-            dataGridExpenses.Size = new Size(837, 428);
+            dataGridExpenses.Size = new Size(783, 428);
             dataGridExpenses.TabIndex = 8;
             dataGridExpenses.CellDoubleClick += dataGridExpenses_CellDoubleClick;
             // 
@@ -362,9 +359,19 @@
             buttonScreen.TabStop = false;
             buttonScreen.Click += buttonScreen_Click;
             // 
+            // panelRed
+            // 
+            panelRed.BackColor = Color.Firebrick;
+            panelRed.Location = new Point(5, 3);
+            panelRed.Name = "panelRed";
+            panelRed.Size = new Size(1711, 94);
+            panelRed.TabIndex = 10;
+            // 
             // tabPageTasks
             // 
             tabPageTasks.BackColor = Color.LightSalmon;
+            tabPageTasks.Controls.Add(flowLayoutPanelNotifications);
+            tabPageTasks.Controls.Add(pictureBoxBell);
             tabPageTasks.Controls.Add(panelGrid2);
             tabPageTasks.Controls.Add(buttonScreen2);
             tabPageTasks.Controls.Add(PanelCenter2);
@@ -374,6 +381,32 @@
             tabPageTasks.Size = new Size(1320, 725);
             tabPageTasks.TabIndex = 1;
             tabPageTasks.Text = "tabPageTasks";
+            // 
+            // flowLayoutPanelNotifications
+            // 
+            flowLayoutPanelNotifications.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            flowLayoutPanelNotifications.AutoScroll = true;
+            flowLayoutPanelNotifications.BackColor = Color.White;
+            flowLayoutPanelNotifications.FlowDirection = FlowDirection.RightToLeft;
+            flowLayoutPanelNotifications.Font = new Font("Segoe UI", 13F);
+            flowLayoutPanelNotifications.Location = new Point(3, 515);
+            flowLayoutPanelNotifications.Name = "flowLayoutPanelNotifications";
+            flowLayoutPanelNotifications.Size = new Size(200, 115);
+            flowLayoutPanelNotifications.TabIndex = 16;
+            flowLayoutPanelNotifications.Visible = false;
+            // 
+            // pictureBoxBell
+            // 
+            pictureBoxBell.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            pictureBoxBell.Cursor = Cursors.Hand;
+            pictureBoxBell.Image = (Image)resources.GetObject("pictureBoxBell.Image");
+            pictureBoxBell.Location = new Point(12, 646);
+            pictureBoxBell.Name = "pictureBoxBell";
+            pictureBoxBell.Size = new Size(54, 64);
+            pictureBoxBell.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxBell.TabIndex = 15;
+            pictureBoxBell.TabStop = false;
+            pictureBoxBell.Click += pictureBoxBell_Click;
             // 
             // panelGrid2
             // 
@@ -434,37 +467,37 @@
             dataGridViewTasks.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dataGridViewTasks.BackgroundColor = Color.LightSalmon;
             dataGridViewTasks.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = SystemColors.Control;
-            dataGridViewCellStyle10.Font = new Font("Segoe UI", 15F);
-            dataGridViewCellStyle10.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
-            dataGridViewTasks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 15F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridViewTasks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewTasks.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = SystemColors.Info;
-            dataGridViewCellStyle11.Font = new Font("Segoe UI", 15F);
-            dataGridViewCellStyle11.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
-            dataGridViewTasks.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Info;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 15F);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dataGridViewTasks.DefaultCellStyle = dataGridViewCellStyle5;
             dataGridViewTasks.GridColor = Color.Black;
-            dataGridViewTasks.Location = new Point(93, 91);
+            dataGridViewTasks.Location = new Point(58, 91);
             dataGridViewTasks.Name = "dataGridViewTasks";
             dataGridViewTasks.ReadOnly = true;
             dataGridViewTasks.RowHeadersWidth = 25;
             dataGridViewTasks.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle12.BackColor = Color.Cornsilk;
-            dataGridViewTasks.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.BackColor = Color.Cornsilk;
+            dataGridViewTasks.RowsDefaultCellStyle = dataGridViewCellStyle6;
             dataGridViewTasks.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewTasks.ShowCellErrors = false;
             dataGridViewTasks.ShowCellToolTips = false;
             dataGridViewTasks.ShowEditingIcon = false;
             dataGridViewTasks.ShowRowErrors = false;
-            dataGridViewTasks.Size = new Size(837, 428);
+            dataGridViewTasks.Size = new Size(610, 428);
             dataGridViewTasks.TabIndex = 8;
             dataGridViewTasks.CellDoubleClick += dataGridViewTasks_CellContentDoubleClick;
             dataGridViewTasks.CellMouseClick += dataGridViewTasks_CellMouseClick;
@@ -721,6 +754,12 @@
             cartesianChart1.Size = new Size(654, 437);
             cartesianChart1.TabIndex = 0;
             // 
+            // timerNotifyCheck
+            // 
+            timerNotifyCheck.Enabled = true;
+            timerNotifyCheck.Interval = 1000;
+            timerNotifyCheck.Tick += timerNotifyCheck_Tick;
+            // 
             // ExpensesForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -730,6 +769,7 @@
             ClientSize = new Size(1311, 717);
             Controls.Add(tabControl);
             Controls.Add(panelScreen);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ExpensesForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "TaskSpense Sharp";
@@ -750,6 +790,7 @@
             ((System.ComponentModel.ISupportInitialize)buttonScreen).EndInit();
             tabPageTasks.ResumeLayout(false);
             tabPageTasks.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxBell).EndInit();
             panelGrid2.ResumeLayout(false);
             panelGrid2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxResetSort).EndInit();
@@ -813,5 +854,8 @@
         private PictureBox pictureBoxResetCategory;
         private Label labelNoFilterResult;
         public DataGridView dataGridExpenses;
+        private System.Windows.Forms.Timer timerNotifyCheck;
+        public FlowLayoutPanel flowLayoutPanelNotifications;
+        public PictureBox pictureBoxBell;
     }
 }

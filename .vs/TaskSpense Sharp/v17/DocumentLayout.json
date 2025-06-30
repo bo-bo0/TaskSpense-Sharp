@@ -1,0 +1,157 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{37532DB7-2AA7-47C5-9440-BCA336DFA099}|PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj|c:\\users\\proprietario\\source\\repos\\personalexpenseandtaskmanager\\taskspense-sharp\\personalexpenseandtaskmanager\\personalexpenseandtaskmanager.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{37532DB7-2AA7-47C5-9440-BCA336DFA099}|PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj|solutionrelative:personalexpenseandtaskmanager\\personalexpenseandtaskmanager.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37532DB7-2AA7-47C5-9440-BCA336DFA099}|PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj|c:\\users\\proprietario\\source\\repos\\personalexpenseandtaskmanager\\taskspense-sharp\\personalexpenseandtaskmanager\\personalexpenseandtaskmanager.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{37532DB7-2AA7-47C5-9440-BCA336DFA099}|PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj|solutionrelative:personalexpenseandtaskmanager\\personalexpenseandtaskmanager.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37532DB7-2AA7-47C5-9440-BCA336DFA099}|PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj|c:\\users\\proprietario\\source\\repos\\personalexpenseandtaskmanager\\taskspense-sharp\\personalexpenseandtaskmanager\\expensesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37532DB7-2AA7-47C5-9440-BCA336DFA099}|PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj|solutionrelative:personalexpenseandtaskmanager\\expensesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37532DB7-2AA7-47C5-9440-BCA336DFA099}|PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj|c:\\users\\proprietario\\source\\repos\\personalexpenseandtaskmanager\\taskspense-sharp\\personalexpenseandtaskmanager\\expensesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{37532DB7-2AA7-47C5-9440-BCA336DFA099}|PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj|solutionrelative:personalexpenseandtaskmanager\\expensesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37532DB7-2AA7-47C5-9440-BCA336DFA099}|PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj|c:\\users\\proprietario\\source\\repos\\personalexpenseandtaskmanager\\taskspense-sharp\\personalexpenseandtaskmanager\\properties\\resources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{37532DB7-2AA7-47C5-9440-BCA336DFA099}|PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj|solutionrelative:personalexpenseandtaskmanager\\properties\\resources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37532DB7-2AA7-47C5-9440-BCA336DFA099}|PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj|c:\\users\\proprietario\\source\\repos\\personalexpenseandtaskmanager\\taskspense-sharp\\personalexpenseandtaskmanager\\expensesform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37532DB7-2AA7-47C5-9440-BCA336DFA099}|PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj|solutionrelative:personalexpenseandtaskmanager\\expensesform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37532DB7-2AA7-47C5-9440-BCA336DFA099}|PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj|c:\\users\\proprietario\\source\\repos\\personalexpenseandtaskmanager\\taskspense-sharp\\personalexpenseandtaskmanager\\addtaskform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37532DB7-2AA7-47C5-9440-BCA336DFA099}|PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj|solutionrelative:personalexpenseandtaskmanager\\addtaskform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37532DB7-2AA7-47C5-9440-BCA336DFA099}|PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj|c:\\users\\proprietario\\source\\repos\\personalexpenseandtaskmanager\\taskspense-sharp\\personalexpenseandtaskmanager\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37532DB7-2AA7-47C5-9440-BCA336DFA099}|PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj|solutionrelative:personalexpenseandtaskmanager\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PersonalExpenseAndTaskManager",
+              "DocumentMoniker": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj",
+              "RelativeDocumentMoniker": "PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj",
+              "ToolTip": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj",
+              "RelativeToolTip": "PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-30T16:33:43.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PersonalExpenseAndTaskManager",
+              "DocumentMoniker": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj",
+              "RelativeDocumentMoniker": "PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj",
+              "ToolTip": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj",
+              "RelativeToolTip": "PersonalExpenseAndTaskManager\\PersonalExpenseAndTaskManager.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-30T16:14:42.296Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ExpensesForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\ExpensesForm.Designer.cs",
+              "RelativeDocumentMoniker": "PersonalExpenseAndTaskManager\\ExpensesForm.Designer.cs",
+              "ToolTip": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\ExpensesForm.Designer.cs",
+              "RelativeToolTip": "PersonalExpenseAndTaskManager\\ExpensesForm.Designer.cs",
+              "ViewState": "AgIAAIABAAAAAAAAAAAWwJEBAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T18:16:18.473Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Resources.resx",
+              "DocumentMoniker": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\Properties\\Resources.resx",
+              "RelativeDocumentMoniker": "PersonalExpenseAndTaskManager\\Properties\\Resources.resx",
+              "ToolTip": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\Properties\\Resources.resx",
+              "RelativeToolTip": "PersonalExpenseAndTaskManager\\Properties\\Resources.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-06-29T18:10:02.185Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AddTaskForm.cs",
+              "DocumentMoniker": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\AddTaskForm.cs",
+              "RelativeDocumentMoniker": "PersonalExpenseAndTaskManager\\AddTaskForm.cs",
+              "ToolTip": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\AddTaskForm.cs",
+              "RelativeToolTip": "PersonalExpenseAndTaskManager\\AddTaskForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T16:24:24.801Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Notification.cs",
+              "DocumentMoniker": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\Notification.cs",
+              "RelativeDocumentMoniker": "PersonalExpenseAndTaskManager\\Notification.cs",
+              "ToolTip": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\Notification.cs",
+              "RelativeToolTip": "PersonalExpenseAndTaskManager\\Notification.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAcwE0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-28T15:37:57.838Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ExpensesForm.cs",
+              "DocumentMoniker": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\ExpensesForm.cs",
+              "RelativeDocumentMoniker": "PersonalExpenseAndTaskManager\\ExpensesForm.cs",
+              "ToolTip": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\ExpensesForm.cs",
+              "RelativeToolTip": "PersonalExpenseAndTaskManager\\ExpensesForm.cs",
+              "ViewState": "AgIAAHYBAAAAAAAAAAAWwIsBAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T11:04:55.952Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ExpensesForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\ExpensesForm.cs",
+              "RelativeDocumentMoniker": "PersonalExpenseAndTaskManager\\ExpensesForm.cs",
+              "ToolTip": "C:\\Users\\Proprietario\\source\\repos\\PersonalExpenseAndTaskManager\\TaskSpense-Sharp\\PersonalExpenseAndTaskManager\\ExpensesForm.cs [Design]",
+              "RelativeToolTip": "PersonalExpenseAndTaskManager\\ExpensesForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-29T21:31:11.679Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

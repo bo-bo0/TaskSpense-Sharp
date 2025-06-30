@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("PersonalExpenseAndTaskManager")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("TaskSpense Sharp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c72f39fa574665b2af1ccf2d6b390cb112a1703")]
-[assembly: System.Reflection.AssemblyProductAttribute("PersonalExpenseAndTaskManager")]
-[assembly: System.Reflection.AssemblyTitleAttribute("PersonalExpenseAndTaskManager")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0131b8626e4efc129fc4f1a4affdf501386a821e")]
+[assembly: System.Reflection.AssemblyProductAttribute("TaskSpense Sharp")]
+[assembly: System.Reflection.AssemblyTitleAttribute("TaskSpense Sharp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]

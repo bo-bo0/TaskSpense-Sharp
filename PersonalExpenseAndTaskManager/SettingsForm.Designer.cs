@@ -127,8 +127,7 @@
             // 
             // SettingsForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(545, 214);
             ControlBox = false;
@@ -147,6 +146,7 @@
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Settings";
+            Load += SettingsForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

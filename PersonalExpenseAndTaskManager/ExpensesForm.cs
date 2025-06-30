@@ -1,9 +1,11 @@
 using LiveChartsCore;
 using LiveChartsCore.SkiaSharpView;
+using OpenTK.Graphics.ES11;
 using System;
 using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
 using System.IO.Packaging;
+using System.Media;
 using System.Reflection.Metadata.Ecma335;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -16,6 +18,7 @@ namespace PersonalExpenseAndTaskManager
     {
         public static List<Expense> expenses = [];
         public static List<Task> tasks = [];
+        public static List<Notification> notifications = [];
 
         public static string? appFolder = null;
         public static string? expensesFile = null;
@@ -41,15 +44,15 @@ namespace PersonalExpenseAndTaskManager
             if (!File.Exists(tasksFile))
                 File.WriteAllText(tasksFile, null);
 
-                //initialize tab control (only a not working test for now)
-                var tabExpenses = new UserControl();
+            //initialize tab control (only a not working test for now)
+            var tabExpenses = new UserControl();
             tabPageExpenses.Controls.Add(tabExpenses);
 
             var tabTasks = new UserControl();
             tabPageExpenses.Controls.Add(tabTasks);
 
-
             tabControl.SelectedIndex = 0;
+
         }
 
         private void ExpensesForm_Load(object sender, EventArgs e)
@@ -93,6 +96,8 @@ namespace PersonalExpenseAndTaskManager
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
+            using (var player = new SoundPlayer(Properties.Resources.click)) { player.Play(); }
+
             var response = MessageBox.Show("Are you sure you want to exit?", "Confirm Request", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (response == DialogResult.Yes)
@@ -124,6 +129,8 @@ namespace PersonalExpenseAndTaskManager
 
         private void buttonScreen_Click(object sender, EventArgs e)
         {
+            using (var player = new SoundPlayer(Properties.Resources.click)) { player.Play(); }
+
             WindowState = Graphics.screenSet(WindowState);
         }
 
@@ -143,6 +150,8 @@ namespace PersonalExpenseAndTaskManager
 
         private void labelPlus_Click(object sender, EventArgs e)
         {
+            using (var player = new SoundPlayer(Properties.Resources.click)) { player.Play(); }
+
             AddExpenseForm addForm = new AddExpenseForm();
             addForm.ShowDialog();
 
@@ -210,6 +219,8 @@ namespace PersonalExpenseAndTaskManager
 
         private void pictureBoxResetCategory_Click(object sender, EventArgs e)
         {
+            using (var player = new SoundPlayer(Properties.Resources.click)) { player.Play(); }
+
             comboBoxFilterCategory.Text = null;
             dataGridExpenses.DataSource = null;
             labelNoFilterResult.Visible = false;
@@ -253,24 +264,32 @@ namespace PersonalExpenseAndTaskManager
 
         private void buttonTasks_Click(object sender, EventArgs e)
         {
+            using (var player = new SoundPlayer(Properties.Resources.click)) { player.Play(); }
+
             tabControl.SelectedIndex = 1;
             Global.CurrentPage = "Tasks";
         }
 
         private void buttonExpenses_Click(object sender, EventArgs e)
         {
+            using (var player = new SoundPlayer(Properties.Resources.click)) { player.Play(); }
+
             tabControl.SelectedIndex = 0;
             Global.CurrentPage = "Expenses";
         }
 
         private void labelPlus2_Click(object sender, EventArgs e)
         {
+            using (var player = new SoundPlayer(Properties.Resources.click)) { player.Play(); }
+
             var addTask = new AddTaskForm();
             addTask.ShowDialog();
         }
 
         private void pictureBoxResetSort_Click(object sender, EventArgs e)
         {
+            using (var player = new SoundPlayer(Properties.Resources.click)) { player.Play(); }
+
             labelNoSortResult.Visible = false;
             comboBoxSort.Text = null;
             if (tasks.Count > 0) { dataGridViewTasks.DataSource = tasks; return; }
@@ -280,7 +299,14 @@ namespace PersonalExpenseAndTaskManager
 
         private void comboBoxSort_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var sortedTasks = new List<Task>(tasks);
+            List<Task> sortedTasks = [];
+
+            for (int i = 0; i < tasks.Count; i++)
+            {
+                var added = new Task(tasks[i].Title, tasks[i].Description, tasks[i].Deadline, tasks[i].Priority);
+                sortedTasks.Add(added);
+            }
+
 
             dataGridViewTasks.DataSource = null;
 
@@ -351,8 +377,13 @@ namespace PersonalExpenseAndTaskManager
         {
             if (e.Button == MouseButtons.Right && e.ColumnIndex == 1 && e.RowIndex >= 0)
             {
+                using (var player = new SoundPlayer(Properties.Resources.click)) { player.Play(); }
+
                 dataGridViewTasks.Visible = false;
                 Global.FullDescriptionFlag = true;
+
+                dataGridViewTasks.ClearSelection();
+                dataGridViewTasks.Rows[e.RowIndex].Selected = true; 
 
                 //description area
                 string? current_description = $"{dataGridViewTasks.Rows[e.RowIndex].Cells[e.ColumnIndex].Value}";
@@ -379,6 +410,8 @@ namespace PersonalExpenseAndTaskManager
 
         private void BackButton_Click(object? sender, EventArgs e)
         {
+            using (var player = new SoundPlayer(Properties.Resources.click)) { player.Play(); }
+
             var button = sender as Button;
 
             if (button == null) { return; }
@@ -396,6 +429,8 @@ namespace PersonalExpenseAndTaskManager
 
         private void buttonGraphics_Click(object sender, EventArgs e)
         {
+            using (var player = new SoundPlayer(Properties.Resources.click)) { player.Play(); }
+
             if (!Global.AlreadyCartesian)
             {
                 var expensesValues = new List<double>();
@@ -424,6 +459,8 @@ namespace PersonalExpenseAndTaskManager
 
         private void buttonGraphicsInGraphics_Click(object sender, EventArgs e)
         {
+            using (var player = new SoundPlayer(Properties.Resources.click)) { player.Play(); }
+
             var expensesValues = new List<double>();
 
             foreach (var item in expenses)
@@ -444,15 +481,91 @@ namespace PersonalExpenseAndTaskManager
 
         private void buttonExOrTas_Click(object sender, EventArgs e)
         {
+            using (var player = new SoundPlayer(Properties.Resources.click)) { player.Play(); }
+
             if (Global.CurrentPage == "Expenses") { tabControl.SelectedIndex = 0; }
             else if (Global.CurrentPage == "Tasks") { tabControl.SelectedIndex = 1; }
         }
 
         private void buttonSettings_Click(object sender, EventArgs e)
         {
+            using (var player = new SoundPlayer(Properties.Resources.click)) { player.Play(); }
+
             var settings = new SettingsForm();
             settings.ShowDialog();
         }
+
+        private void pictureBoxBell_Click(object sender, EventArgs e)
+        {
+            using (var player = new SoundPlayer(Properties.Resources.click)) { player.Play(); }
+
+                Global.NotificationPanelIsOpen = !flowLayoutPanelNotifications.Visible;
+
+            if (flowLayoutPanelNotifications.Visible)
+            { 
+                flowLayoutPanelNotifications.Visible = false;
+
+                //mark notifications as read
+                var readNotificationsTh = new Thread(() =>
+                {
+                    foreach (var item in notifications)
+                    {
+                        item.Unread = false;
+                    }
+                });
+
+                readNotificationsTh.Start();
+                /////////////////////////////////
+                
+                TimerClass.NotificationUpdateTick(true);
+
+                //reset bell image
+                var ms = new MemoryStream(Properties.Resources.bell);
+                pictureBoxBell.Image = Image.FromStream(ms);
+            }
+            else
+            { flowLayoutPanelNotifications.Visible = true; }
+        }
+
+        private void timerNotifyCheck_Tick(object sender, EventArgs e)
+        {
+            TimerClass.NotificationUpdateTick();
+        }
+    }
+
+    abstract class TimerClass
+    {
+        public static void NotificationUpdateTick(bool ignoreCheck = false)
+        {
+            var form = Application.OpenForms.OfType<ExpensesForm>().FirstOrDefault();
+            if (form != null)
+            {
+                if (ignoreCheck || Notification.Check())
+                {
+                    form.flowLayoutPanelNotifications.Controls.Clear();
+                    for (int i = 0; i < ExpensesForm.notifications.Count; i++)
+                    {
+                        var label = new Label();
+                        label.Text = $"{ExpensesForm.notifications[i].Title}: {ExpensesForm.notifications[i].Description}";
+                        label.BringToFront();
+                        label.AutoSize = true;
+                        bool unreadFlag = false;
+                        if (ExpensesForm.notifications[i].Unread)
+                            { label.BackColor = Color.Red; unreadFlag = true; }
+
+                        form.flowLayoutPanelNotifications.Controls.Add(label);
+
+                        //update bell image
+                        if(unreadFlag)
+                        {
+                            var ms = new MemoryStream(Properties.Resources.bell_notify);
+
+                            form.pictureBoxBell.Image = Image.FromStream(ms);
+                        }
+                    }
+                }
+            }
+        }   
     }
     public abstract class Sort
     {
@@ -549,6 +662,7 @@ namespace PersonalExpenseAndTaskManager
         public static string CurrentPage = "Expenses"; //Graphics page excluded
         public static bool LightTheme = true;
         public static string? themeFile = null;
+        public static bool NotificationPanelIsOpen = false; 
 
         //global methods
         public static T? FindControlRecursive<T>(Control parent) where T : Control

@@ -22,9 +22,9 @@ namespace PersonalExpenseAndTaskManager
         private void buttonDone_Click(object sender, EventArgs e)
         {
             Global.LightTheme = checkBoxLight.Checked;
-            var currForm = Application.OpenForms.OfType<ExpensesForm>().FirstOrDefault(); 
+            var currForm = Application.OpenForms.OfType<ExpensesForm>().FirstOrDefault();
 
-            if(currForm != null) { Global.UpdateTheme(currForm); }
+            if (currForm != null) { Global.UpdateTheme(currForm); }
 
             Close();
         }
@@ -41,6 +41,13 @@ namespace PersonalExpenseAndTaskManager
             if (checkBoxDark.Checked) { checkBoxLight.Checked = false; }
 
             else { checkBoxLight.Checked = true; }
+        }
+
+        private void SettingsForm_Load(object sender, EventArgs e)
+        {
+            var form = sender as Form;
+
+            if (form != null) { form.FormBorderStyle = FormBorderStyle.FixedDialog; }
         }
     }
 }

@@ -6,7 +6,13 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>ico\logo_ts_sharp.ico</ApplicationIcon>
+    <AssemblyName>TaskSpense Sharp</AssemblyName>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="ico\logo_ts_sharp.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="LiveCharts" Version="0.9.7" />
